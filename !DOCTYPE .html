@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sithara Nirmal | Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+rel="stylesheet"
+/>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0f172a;
+color:white;
+}
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:#111827;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#38bdf8;
+text-decoration:none;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:30px;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover{
+color:#38bdf8;
+}
+
+.hero{
+
+min-height:100vh;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:120px 8%;
+}
+
+.hero-text{
+max-width:600px;
+}
+
+.hero-text h3{
+font-size:24px;
+margin-bottom:10px;
+}
+
+.hero-text h1{
+
+font-size:60px;
+margin-bottom:20px;
+color:#38bdf8;
+}
+
+.hero-text h2{
+font-size:32px;
+margin-bottom:20px;
+}
+
+.hero-text p{
+
+line-height:1.8;
+margin-bottom:30px;
+color:#d1d5db;
+
+}
+
+.btn{
+
+display:inline-block;
+padding:15px 35px;
+background:#38bdf8;
+color:white;
+text-decoration:none;
+border-radius:40px;
+font-weight:bold;
+transition:.3s;
+
+}
+
+.btn:hover{
+
+background:#0284c7;
+
+}
+
+.hero-image img{
+
+width:360px;
+height:360px;
+border-radius:50%;
+object-fit:cover;
+border:6px solid #38bdf8;
+box-shadow:0 0 40px #38bdf8;
+
+}
+
+.social{
+
+margin-top:30px;
+
+}
+
+.social a{
+
+display:inline-flex;
+justify-content:center;
+align-items:center;
+width:45px;
+height:45px;
+border:2px solid #38bdf8;
+border-radius:50%;
+margin-right:15px;
+color:#38bdf8;
+font-size:20px;
+text-decoration:none;
+transition:.4s;
+
+}
+
+.social a:hover{
+
+background:#38bdf8;
+color:white;
+
+}
+
+section{
+
+padding:100px 8%;
+
+}
+
+.title{
+
+font-size:40px;
+text-align:center;
+margin-bottom:60px;
+color:#38bdf8;
+
+}
+
+/* About Section */
+
+.about{
+    background:#111827;
+    min-height:100vh;
+}
+
+.about-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:50px;
+}
+
+.about-text{
+    max-width:700px;
+}
+
+.about-text h2{
+    font-size:35px;
+    color:#38bdf8;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    font-size:18px;
+    line-height:1.8;
+    color:#d1d5db;
+    margin-bottom:20px;
+}
+
+.about-info{
+    margin-top:20px;
+}
+
+.about-info p{
+    margin:10px 0;
+    color:white;
+}
+
+.about-info span{
+    color:#38bdf8;
+    font-weight:600;
+}
+
+.about-image img{
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #38bdf8;
+}
+/* AI Chatbot */
+
+.chatbot-btn{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    width:60px;
+    height:60px;
+    background:#38bdf8;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    cursor:pointer;
+    box-shadow:0 0 20px #38bdf8;
+    z-index:1000;
+}
+
+
+.chatbot-box{
+
+    position:fixed;
+    bottom:100px;
+    right:30px;
+
+    width:320px;
+    height:420px;
+
+    background:#111827;
+
+    border-radius:15px;
+
+    display:none;
+
+    flex-direction:column;
+
+    overflow:hidden;
+
+    box-shadow:0 0 30px rgba(56,189,248,0.5);
+
+    z-index:1000;
+
+}
+
+
+.chat-header{
+
+    background:#38bdf8;
+
+    padding:15px;
+
+    color:white;
+
+    font-weight:bold;
+
+    text-align:center;
+
+}
+
+
+.chat-body{
+
+    flex:1;
+
+    padding:15px;
+
+    overflow-y:auto;
+
+    color:white;
+
+}
+
+
+.chat-input{
+
+    display:flex;
+
+}
+
+
+.chat-input input{
+
+    flex:1;
+
+    padding:12px;
+
+    border:none;
+
+    outline:none;
+
+}
+
+
+.chat-input button{
+
+    width:60px;
+
+    background:#38bdf8;
+
+    border:none;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+/* Education Section */
+
+.education{
+    background:#0f172a;
+    min-height:100vh;
+}
+
+
+.education-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-direction:column;
+
+    gap:30px;
+
+}
+
+
+.education-card{
+
+    background:#111827;
+
+    padding:30px;
+
+    border-left:5px solid #38bdf8;
+
+    border-radius:15px;
+
+    transition:0.3s;
+
+    box-shadow:0 0 15px rgba(56,189,248,0.2);
+
+}
+
+
+.education-card:hover{
+
+    transform:translateX(10px);
+
+    box-shadow:0 0 25px rgba(56,189,248,0.5);
+
+}
+
+
+.education-card h2{
+
+    color:#38bdf8;
+
+    font-size:25px;
+
+    margin-bottom:10px;
+
+}
+
+
+.education-card h3{
+
+    color:white;
+
+    font-size:20px;
+
+    margin-bottom:10px;
+
+}
+
+
+.education-card p{
+
+    color:#d1d5db;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+}
+/* Skills Section */
+
+.skills{
+    background:#111827;
+    min-height:100vh;
+}
+
+
+.skills-container{
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+
+.skill{
+
+    margin-bottom:30px;
+
+}
+
+
+.skill-name{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:10px;
+
+    font-size:18px;
+
+    font-weight:500;
+
+}
+
+
+.skill-name span{
+
+    color:#38bdf8;
+
+}
+
+
+.skill-bar{
+
+    width:100%;
+
+    height:12px;
+
+    background:#1f2937;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+
+.skill-progress{
+
+    height:100%;
+
+    background:#38bdf8;
+
+    border-radius:20px;
+
+    animation:load 2s ease;
+
+}
+
+
+/* Animation */
+
+@keyframes load{
+
+    from{
+
+        width:0;
+
+    }
+
+}
+/* Projects Section */
+
+.projects{
+
+    background:#0f172a;
+    min-height:100vh;
+
+}
+
+
+.projects-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:40px;
+
+}
+
+
+.project-card{
+
+    background:#111827;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    transition:0.4s;
+
+    box-shadow:0 0 20px rgba(56,189,248,0.2);
+
+}
+
+
+.project-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 0 30px rgba(56,189,248,0.5);
+
+}
+
+
+
+.project-card img{
+
+    width:100%;
+
+    height:230px;
+
+    object-fit:cover;
+
+}
+
+
+
+.project-content{
+
+    padding:25px;
+
+}
+
+
+
+.project-content h2{
+
+    color:#38bdf8;
+
+    font-size:24px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.project-content p{
+
+    color:#d1d5db;
+
+    line-height:1.8;
+
+}
+
+
+
+.project-tech{
+
+    margin-top:15px;
+
+    color:#38bdf8;
+
+    font-weight:600;
+
+}
+
+
+.project-btn{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    padding:10px 25px;
+
+    background:#38bdf8;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:25px;
+
+    transition:0.3s;
+
+}
+
+
+.project-btn:hover{
+
+    background:#0284c7;
+
+}
+/* Contact Section */
+
+.contact{
+
+    background:#111827;
+
+    min-height:100vh;
+
+}
+
+
+.contact-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:50px;
+
+}
+
+
+
+.contact-info h2{
+
+    color:#38bdf8;
+
+    font-size:30px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.contact-info p{
+
+    color:#d1d5db;
+
+    line-height:2;
+
+    font-size:17px;
+
+}
+
+
+
+.contact-info i{
+
+    color:#38bdf8;
+
+    margin-right:10px;
+
+}
+
+
+
+.contact-form{
+
+    background:#0f172a;
+
+    padding:30px;
+
+    border-radius:15px;
+
+}
+
+
+
+.contact-form input,
+.contact-form textarea{
+
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:20px;
+
+    background:#111827;
+
+    border:1px solid #38bdf8;
+
+    border-radius:10px;
+
+    color:white;
+
+    outline:none;
+
+}
+
+
+
+.contact-form textarea{
+
+    height:150px;
+
+    resize:none;
+
+}
+
+
+
+.contact-form button{
+
+
+    width:100%;
+
+    padding:15px;
+
+    background:#38bdf8;
+
+    color:white;
+
+    border:none;
+
+    border-radius:30px;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.contact-form button:hover{
+
+    background:#0284c7;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<a href="#" class="logo">Sithara.</a>
+
+<nav>
+
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#education">Education</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h3>Hello, I'm</h3>
+
+<h1>Sithara Nirmal</h1>
+
+<h2>Data Science Undergraduate</h2>
+
+<p>
+
+I am currently pursuing a Bachelor of Science (Honours) in Data Science at Sri Lanka Technology Campus (SLTC). I am passionate about Data Science, Business Analytics, and Software Development. I enjoy developing software solutions using Python, Java, SQL, and modern web technologies.
+
+</p>
+
+<a href="C:\Users\EX BOOK\Desktop\portfolio\sitharanirmal_resume.pdf" class="btn">
+
+Download CV
+
+</a>
+
+<div class="social">
+
+<a href="https://github.com/sitharaNirmal"><i class="fab fa-github"></i></a>
+
+<a href="https://www.linkedin.com/in/sithara-nirmal-3a0002418?utm_source=share_via&utm_content=profile&utm_medium=member_ios"><i class="fab fa-linkedin"></i></a>
+
+<a href="cit-25-02-0431@sltc.edu.lk"><i class="fas fa-envelope"></i></a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="C:\Users\EX BOOK\Downloads\master.png" alt="Sithara">
+</div>
+
+</section>
+
+<section class="about" id="about">
+
+    <h2 class="title">About Me</h2>
+
+    <div class="about-container">
+
+        <div class="about-image">
+            <img src="C:\Users\EX BOOK\Desktop\portfolio\my new image .jpeg" alt="Sithara Nirmal">
+        </div>
+
+
+        <div class="about-text">
+
+            <h2>Data Science Undergraduate</h2>
+
+            <p>
+                I am Sithara Nirmal, a passionate Data Science undergraduate 
+                currently pursuing a Bachelor of Science (Honours) in Data Science 
+                at Sri Lanka Technology Campus (SLTC).
+            </p>
+
+            <p>
+                I have a strong interest in Data Science, Business Analytics, 
+                Machine Learning, and Software Development. I enjoy transforming 
+                data into meaningful insights and building technology solutions.
+            </p>
+
+
+            <div class="about-info">
+
+                <p>
+                    <span>Name:</span> Sithara Nirmal
+                </p>
+
+                <p>
+                    <span>Degree:</span> BSc (Hons) in Data Science
+                </p>
+
+                <p>
+                    <span>University:</span> Sri Lanka Technology Campus
+                </p>
+
+                <p>
+                    <span>Skills:</span> Python, Java, SQL, HTML, CSS, JavaScript
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+           
+
+              
+<section class="education" id="education">
+
+<h2 class="title">Education</h2>
+
+
+<div class="education-container">
+
+
+    <div class="education-card">
+
+        <h2>BSc (Hons) in Data Science</h2>
+
+        <h3>Sri Lanka Technology Campus (SLTC)</h3>
+
+        <p>
+            2026 - Present
+        </p>
+
+        <p>
+            Currently pursuing a Bachelor of Science (Honours) 
+            in Data Science with a focus on Data Analytics, 
+            Machine Learning, Programming, and Business Intelligence.
+        </p>
+
+    </div>
+
+
+
+    <div class="education-card">
+
+        <h2>G.C.E Advanced Level</h2>
+
+        <h3>Physical Science Stream</h3>
+
+        <p>
+            Results: B, C, C
+        </p>
+
+        <p>
+            Completed Advanced Level studies with a strong foundation
+            in Mathematics and Science.
+        </p>
+
+    </div>
+
+
+
+
+    <div class="education-card">
+
+        <h2>G.C.E Ordinary Level</h2>
+
+        <h3>Secondary Education</h3>
+
+        <p>
+            Results: 8A, B
+        </p>
+
+        <p>
+            Successfully completed Ordinary Level education with
+            excellent academic performance.
+        </p>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+<!-- AI Chatbot -->
+
+<div class="chatbot-btn" onclick="openChat()">
+    <i class="fas fa-robot"></i>
+</div>
+
+
+<div class="chatbot-box" id="chatbox">
+
+    <div class="chat-header">
+        Sithara AI Assistant 🤖
+    </div>
+
+
+    <div class="chat-body" id="chatbody">
+
+        <p>
+        Hello! I am Sithara's AI assistant. 
+        Ask me about my skills, education, or projects.
+        </p>
+
+    </div>
+
+
+    <div class="chat-input">
+
+        <input 
+        type="text" 
+        id="userInput" 
+        placeholder="Ask something..."
+        >
+
+        <button onclick="sendMessage()">
+            ➤
+        </button>
+
+    </div>
+
+</div>
+<script>
+
+function openChat(){
+
+let box=document.getElementById("chatbox");
+
+if(box.style.display==="flex")
+{
+    box.style.display="none";
+}
+else
+{
+    box.style.display="flex";
+}
+
+}
+
+
+
+function sendMessage(){
+
+let input=document.getElementById("userInput");
+
+let message=input.value;
+
+
+let chat=document.getElementById("chatbody");
+
+
+if(message=="")
+{
+    return;
+}
+
+
+chat.innerHTML += 
+"<p><b>You:</b> "+message+"</p>";
+
+
+
+let reply="";
+
+
+message=message.toLowerCase();
+
+
+
+if(message.includes("name"))
+{
+reply="My name is Sithara Nirmal.";
+}
+
+else if(message.includes("skill"))
+{
+reply="Sithara's skills include Python, Java, SQL, HTML, CSS, JavaScript and Data Analysis.";
+}
+
+else if(message.includes("education"))
+{
+reply="Sithara is studying BSc (Hons) in Data Science at Sri Lanka Technology Campus.";
+}
+
+else if(message.includes("project"))
+{
+reply="Sithara works on Data Science, Software Development and Analytics projects.";
+}
+
+else
+{
+reply="You can ask me about Sithara's education, skills, projects, or experience.";
+}
+
+
+
+chat.innerHTML += 
+"<p><b>AI:</b> "+reply+"</p>";
+
+
+input.value="";
+
+
+chat.scrollTop=chat.scrollHeight;
+
+
+}
+
+</script>
+<section class="skills" id="skills">
+
+<h2 class="title">My Skills</h2>
+
+
+<div class="skills-container">
+
+
+    <div class="skill">
+
+        <div class="skill-name">
+
+            <p>Python</p>
+            <span>90%</span>
+
+        </div>
+
+        <div class="skill-bar">
+
+            <div class="skill-progress" style="width:90%;"></div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="skill">
+
+        <div class="skill-name">
+
+            <p>Java</p>
+            <span>80%</span>
+
+        </div>
+
+        <div class="skill-bar">
+
+            <div class="skill-progress" style="width:80%;"></div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="skill">
+
+        <div class="skill-name">
+
+            <p>SQL</p>
+            <span>85%</span>
+
+        </div>
+
+        <div class="skill-bar">
+
+            <div class="skill-progress" style="width:85%;"></div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="skill">
+
+        <div class="skill-name">
+
+            <p>HTML & CSS</p>
+            <span>90%</span>
+
+        </div>
+
+        <div class="skill-bar">
+
+            <div class="skill-progress" style="width:90%;"></div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="skill">
+
+        <div class="skill-name">
+
+            <p>JavaScript</p>
+            <span>75%</span>
+
+        </div>
+
+        <div class="skill-bar">
+
+            <div class="skill-progress" style="width:75%;"></div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="skill">
+
+        <div class="skill-name">
+
+            <p>Data Analysis</p>
+            <span>85%</span>
+
+        </div>
+
+        <div class="skill-bar">
+
+            <div class="skill-progress" style="width:85%;"></div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+</section>
+<section class="projects" id="projects">
+
+
+<h2 class="title">My Projects</h2>
+
+
+
+<div class="projects-container">
+
+
+
+<!-- Project 01 -->
+
+<div class="project-card">
+
+
+<img src="C:\Users\EX BOOK\Desktop\portfolio\image 01.png" 
+alt="MATLAB and Python Project">
+
+
+
+<div class="project-content">
+
+
+<h2>
+MATLAB & Python Mathematical Applications
+</h2>
+
+
+<p>
+Developed mathematical and computational solutions using 
+MATLAB and Python. Implemented algorithms, mathematical 
+models, data processing techniques, and visualizations 
+to solve real-world computing problems.
+</p>
+
+
+<div class="project-tech">
+
+Technologies:
+Python | MATLAB | Data Analysis | Algorithms
+
+</div>
+
+
+<a href="#" class="project-btn">
+View Project
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- Project 02 -->
+
+
+<div class="project-card">
+
+
+<img src="C:\Users\EX BOOK\Desktop\portfolio\image2.png" 
+alt="SLTC Student Record Management System">
+
+
+
+<div class="project-content">
+
+
+<h2>
+SLTC Student Record Management System
+</h2>
+
+
+
+<p>
+Developed a desktop application using Python and the 
+Tkinter library to handle, organize, and automate 
+student data entry workflows seamlessly. 
+
+The system provides a user-friendly GUI interface 
+for managing student records efficiently.
+</p>
+
+
+
+<div class="project-tech">
+
+Technologies:
+Python | Tkinter | GUI | Database Management
+
+</div>
+
+
+
+<a href="#" class="project-btn">
+View Project
+</a>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
+
+</section>
+<section class="contact" id="contact">
+
+
+<h2 class="title">Contact Me</h2>
+
+
+
+<div class="contact-container">
+
+
+
+<!-- Contact Information -->
+
+<div class="contact-info">
+
+
+<h2>
+Let's Connect
+</h2>
+
+
+<p>
+I am open to opportunities, collaborations, 
+and discussions related to Data Science, 
+Business Analytics, and Software Development.
+</p>
+
+
+
+<p>
+<i class="fas fa-user"></i>
+Sithara Nirmal
+</p>
+
+
+
+<p>
+<i class="fas fa-envelope"></i>
+cit-25-02-0431@sltc.edu.lk
+</p>
+
+
+
+<p>
+<i class="fas fa-location-dot"></i>
+Sri Lanka
+</p>
+
+
+
+<p>
+<i class="fas fa-graduation-cap"></i>
+BSc (Hons) in Data Science
+</p>
+
+
+
+</div>
+
+
+
+
+
+<!-- Contact Form -->
+
+<div class="contact-form">
+
+
+<form>
+
+
+<input 
+type="text" 
+placeholder="Your Name"
+required
+>
+
+
+
+<input 
+type="email" 
+placeholder="Your Email"
+required
+>
+
+
+
+<textarea 
+placeholder="Your Message"
+required>
+</textarea>
+
+
+
+<button type="submit">
+
+Send Message
+
+</button>
+
+
+
+</form>
+
+
+</div>
+
+
+
+
+</div>
+
+
+</section>   
+
+    
